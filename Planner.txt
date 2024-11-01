@@ -15,6 +15,19 @@ action=/edit
 action=/delete
 
 sql:
+CREATE TABLE game_list(
+	id SERIAL PRIMARY KEY,
+	Creator VARCHAR(50),
+	Creator_Link VARCHAR(200),
+	Title VARCHAR(100),
+	Game_Link VARCHAR(200),
+	Date DATE,
+	Visits VARCHAR(15),
+	Genre VARCHAR(30),
+	Rating FLOAT,
+	Game_Image VARCHAR(200)
+)
+
 INSERT INTO game_list(creator, creator_link, title, game_link, date, visits, genre, rating, game_image)
 VALUES 
 
