@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Game-Review</title>
+    
+</head>
+<body>
+    <header class="main-header" >
+        <nav class="navigation-bar">
+            <div class="logo">
+                <a href="/">Nerdanta</a>
+            </div>
+            <div class="content">
+                <a href="/" id="main-page">Home</a>
+                <a href="/edit" id="edit-page">Add</a>
+                <a href="/delete" id="edit-page">Delete</a>
+                <a href="/about" id="about-page">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="content-head">
+            <div class="sorting">
+                <form action="/sort" method="post">
+                    <label for="payment">Sort By:</label>
+                    <select id="payment">
+                        <option value="asc">A-Z</option>
+                        <option value="desc">Z-A</option>
+                        <option value="new">Newest</option> 
+                        <option value="old">Oldest</option> 
+                    </select> <!--A selection box-->
+                    
+                    <input type="submit">
+                </form>
+            </div>
+        </div>
+
+        <div class="content-body">
+            <section class="main-container" style="margin-top: 3.75rem;">
+                <div class="game">
+                    <div class="left">
+                        <a href="/" class="creator">vetex</a>
+                        <a href="/" class="title">Arcane Odyssey</a>
+                        <div class="status">
+                            <p class="date">Release: 6/8/2019</p>
+                            <p class="visit">Visit: 109.2M+</p>
+                            <p class="genre">Genre: RPG</p>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="progress-circle">
+                            <h2 class="rating-number">9.26</h2>
+                            <p class="word" style="margin-top: 1rem;">Rating</p>
+                        </div>
+                        <img src="https://tr.rbxcdn.com/180DAY-84940403ee2b433909e76c23a50b880a/256/256/Image/Webp/noFilter" alt="game-image">
+                    </div>
+                </div>
+                
+            </section>            
+        </div>
+    </main>
+
+    <footer>
+        Copyright © <%= new Date().getFullYear() %>
+    </footer>
+    <script src="jquery.js"></script>
+</body>
+</html>

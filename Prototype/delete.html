@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Game-Review Edit</title>
+    
+</head>
+<body>
+    <header class="main-header" >
+        <nav class="navigation-bar">
+            <div class="logo">
+                <a href="/">Nerdanta</a>
+            </div>
+            <div class="content">
+                <a href="/" id="main-page">Home</a>
+                <a href="/edit" id="edit-page">Add</a>
+                <a href="/delete" id="edit-page">Delete</a>
+                <a href="/about" id="about-page">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="add-section">
+        <form action="/delete" method="post" class="add-form">
+            <div>
+                <label for="game-title">Game Title:</label>
+                <input type="text" id="game-title" name="game-title" required>
+            </div>
+            <div  class="Add">
+                <input type="submit" value="Confirm"  class="Add">
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        Copyright © <%= new Date().getFullYear() %>
+    </footer>
+    <script src="jquery.js"></script>
+</body>
+</html>

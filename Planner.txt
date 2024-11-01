@@ -1,0 +1,27 @@
+ROBLOX Games Review 
+What to review?
+- Name
+- Creator
+- Genre 
+- Description
+- Visit
+- Date release
+- Link
+- Img link
+(Game ID)
+
+action=/add
+action=/edit
+action=/delete
+
+sql:
+INSERT INTO game_list(creator, creator_link, title, game_link, date, visits, genre, rating, game_image)
+VALUES 
+
+INSERT INTO game_list(creator, creator_link, title, game_link, date, visits, genre, rating, game_image)
+VALUES ('vetexgames', 'https://www.roblox.com/users/5414629/profile/', 'Arcane Odyssey', 'https://www.roblox.com/games/3272915504/Arcane-Odyssey-Halloween', '2019-6-8', '109.2M','RPG', 9.26, 'https://tr.rbxcdn.com/180DAY-84940403ee2b433909e76c23a50b880a/256/256/Image/Webp/noFilter')
+
+
+PH
+INSERT INTO game_list (creator, creator_link, title, game_link, date, visits, genre, rating, game_image)
+VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Game-Review</title>
+    
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+
+    <main>
+        <div class="content-head">
+            <div class="sorting">
+                <form action="/sort" method="post">
+                    <label for="payment">Sort By:</label>
+                    <select id="payment">
+                        <option value="asc">A-Z</option>
+                        <option value="desc">Z-A</option>
+                        <option value="new">Newest</option> 
+                        <option value="old">Oldest</option> 
+                    </select> <!--A selection box-->
+                    
+                    <input type="submit">
+                </form>
+            </div>
+        </div>
+
+        <div class="content-body">
+            <section class="main-container" style="margin-top: 3.75rem;">
+                <% games.forEach(function(game) { %>
+                    <div class="game">
+                        <div class="left">
+                            <a href="<%= game.creator_link %>" class="creator">
+                                <%= game.creator %>
+                            </a>
+                            <a href="<%= game.game_link %>" class="title">
+                                <%= game.title %>
+                            </a>
+                            <div class="status">
+                                <p class="date">Release: <%= game.date %></p>
+                                <p class="visit">Visit: <%= game.visits %>+</p>
+                                <p class="genre">Genre: <%= game.genre %></p>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="progress-circle">
+                                <h2 class="rating-number"><%= game.rating %></h2>
+                                <p class="word" style="margin-top: 1rem;">Rating</p>
+                            </div>
+                            <img src="<%= game.game_image %>" alt="game-image">
+                        </div>
+                    </div>
+                <% }) %>
+                
+            </section>            
+        </div>
+    </main>
+
+    <%- include('partials/footer.ejs') %>
+    <script src="jquery.js"></script>
+</body>
+</html>
