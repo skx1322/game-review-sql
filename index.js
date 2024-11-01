@@ -32,14 +32,29 @@ let games = [
 ];
 
 // Page navigation
+async function queryAndRender(res, orderBy, direction) {
+    const result = await db.query(`SELECT * FROM game_list ORDER BY ${orderBy} ${direction}`);
+    const games = result.rows;
+    res.render("index.ejs", { games: games });
+}
+
+// Page navigation
 app.get("/", async(req, res)=>{
-    const result = await db.query("SELECT * FROM game_list ORDER BY title ASC")
-    games = result.rows;
-    // console.log(games)
-    res.render("index.ejs",{
-        games: games,
-    })
+    await queryAndRender(res, 'title', 'ASC');
 })
+    app.post("/sort", async(req, res)=>{
+        const result = req.body.sorting
+        console.log(result)
+        if (result === 'asc') {
+            await queryAndRender(res, 'title', 'ASC');
+        } else if (result === 'desc') {
+            await queryAndRender(res, 'title', 'DESC');
+        } else if (result === 'new') {
+            await queryAndRender(res, 'Date', 'ASC');
+        } else {
+            await queryAndRender(res, 'Date', 'DESC');
+        }
+    })
 
 app.get("/edit", (req, res)=>{
     res.render("edit.ejs")
