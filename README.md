@@ -1,6 +1,8 @@
 # NODE EJS Project
-# PostgresSQL, Node.js, Express and EJS
-
+1. Node.js
+2. Express.js
+3. EJS
+4. PostgresSQL
 
 # Project Setup Guide
 
